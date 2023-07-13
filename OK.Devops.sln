@@ -1,10 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EF62943C-1A50-4EEC-9EBD-BBDBE1A13107}"
-	ProjectSection(SolutionItems) = preProject
-		Dockerfile = Dockerfile
-		.dockerignore = .dockerignore
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B8B93556-2E37-452F-9352-12F8FE0EA802}"
 EndProject
