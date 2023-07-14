@@ -16,6 +16,6 @@ jobs:
         
       - uses: actions/setup-dotnet@v3
         with: 
-          dotnet-version: '7.0.9'
+          dotnet-version: '7.0.x'
 #      - name: Build solution
 #      - run: docker-compose up --exit-code-from 
