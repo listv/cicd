@@ -20,4 +20,4 @@ jobs:
           dotnet-version: '7.0.x'
       
       - name: Build solution
-        run: docker-compose up --exit-code-from 
+        run: docker-compose up --exit-code-from builder builder
