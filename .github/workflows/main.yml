@@ -14,5 +14,5 @@ jobs:
       - name: Checkout 
         uses: actions/checkout@v3
         
-      - name: Build solution
-      - run: docker-compose up --exit-code-from 
+#      - name: Build solution
+#      - run: docker-compose up --exit-code-from 
