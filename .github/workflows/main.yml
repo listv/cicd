@@ -14,5 +14,8 @@ jobs:
       - name: Checkout 
         uses: actions/checkout@v3
         
+      - uses: actions/setup-dotnet@v3
+        with: 
+          dotnet-version: '7.0.9'
 #      - name: Build solution
 #      - run: docker-compose up --exit-code-from 
