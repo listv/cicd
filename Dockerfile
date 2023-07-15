@@ -4,11 +4,10 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-WORKDIR /src
 COPY ["src/Api/Api.csproj", "src/Api/"]
 RUN dotnet restore "src/Api/Api.csproj"
 COPY . .
-WORKDIR "/src/src/Api"
+WORKDIR "/src/Api"
 RUN dotnet build "Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
