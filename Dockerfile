@@ -1,6 +1,10 @@
 ﻿FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-COPY ./src/Api/Api.csproj src/Api/
-RUN dotnet restore "src/Api/Api.csproj"
+COPY ./OK.Devops.sln .
+COPY ./src/*/*.csproj ./
+RUN for file in $(ls *.csproj); do mkdir -p ./src/${file%.*}/ && mv $file ./src/${file%.*}/; done
+COPY ./tests/*/*.csproj ./
+RUN for file in $(ls *.csproj); do mkdir -p ./tests/${file%.*}/ && mv $file ./tests/${file%.*}/; done
+RUN dotnet restore
 COPY . .
 WORKDIR "/src/Api"
 RUN dotnet build "Api.csproj" -c Release -o /app/build --no-restore
