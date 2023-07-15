@@ -4,7 +4,12 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-COPY ["src/Api/Api.csproj", "src/Api/"]
+COPY ./OK.Devops.sln /app
+COPY ./*/*.csproj ./
+RUN for file in $(ls *.csproj); do mkdir -p /app/${file%.*}/ && mv $file /app/${file%.*}/; done
+
+WORKDIR /app
+
 RUN dotnet restore "src/Api/Api.csproj"
 COPY . .
 WORKDIR "/src/Api"
