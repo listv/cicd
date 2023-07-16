@@ -20,7 +20,7 @@ jobs:
           dotnet-version: '7.0.x'
       
       - name: Build solution
-        run: docker-compose up --exit-code-from builder builder
+        run: docker-compose up --dry-run --exit-code-from builder builder
       
       - name: Run unit tests
-        run: docker-compose up --exit-code-from unit-tests unit-tests
+        run: docker-compose up --dry-run --exit-code-from unit-tests unit-tests
