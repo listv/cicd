@@ -26,8 +26,6 @@ services:
     command: dotnet test -c Release tests/Api.Tests.Unit/ --logger trx;LogFilePrefix=/app/tests/test-results/
         /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
         /p:CoverletOutput='/app/tests/test-results/unit-tests/'
-    depends_on: 
-      - builder
-
+    
 volumes:
   postgres-data:
