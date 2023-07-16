@@ -21,3 +21,6 @@ jobs:
       
       - name: Build solution
         run: docker-compose up --exit-code-from builder builder
+      
+      - name: Run unit tests
+        run: docker-compose up --exit-code-from unit-tests unit-tests
